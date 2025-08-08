@@ -12,8 +12,9 @@ dist
 dist-ssr
 *.local
 
-src/context
-src/hooks
+# Ignore the entire context and hooks directories
+src/context/
+src/hooks/
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
