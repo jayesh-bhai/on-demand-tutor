@@ -12,6 +12,8 @@ dist
 dist-ssr
 *.local
 
+# Ignore Firebase config file with credentials
+src/firebase/config.ts
 
 # Editor directories and files
 .vscode/*
