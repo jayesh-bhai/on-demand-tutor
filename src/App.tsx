@@ -1,35 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import type { JSX } from 'react/jsx-dev-runtime';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import HeroSection2 from './components/HeroSection2';
+import Pricing from './components/Pricing';
+import ExploreTutors from './pages/ExploreTutors'; // <-- new page
+import StudentLogin from './pages/StudentLogin'; // <-- new page
+import MentorLogin from './pages/MentorLogin'; // <-- new page
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+// Homepage layout
+function HomePage() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1 className='text-red-500'>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="relative w-full h-screen overflow-x-hidden">
+      <Navbar />
+      <br /><br /><br /><br /><br /><br />
+      <Hero />
+      <br /><br /><br />
+      <HeroSection2 />
+      <Pricing />
+    </div>
+  );
 }
 
-export default App
+function App(): JSX.Element {
+  return (
+    <main className="App">
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/explore-tutors" element={<ExploreTutors />} />
+          <Route path="/student-login" element={<StudentLogin />} />
+          <Route path="/student-login" element={<Hero />} />
+          <Route path="/mentor-login" element={<MentorLogin />} />
+          <Route path="/mentor-login" element={<Navbar/>} />
+        </Routes>
+      </Router>
+    </main>
+  );
+}
+
+export default App;
