@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const StudentLogin = () => {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -43,7 +44,12 @@ const StudentLogin = () => {
                 : "bg-gray-200 text-gray-600 hover:bg-gray-300"
             }`}
           >
-            Login
+                        <Link
+              to="/student-dashboard"
+              className="block px-4 py-2 text-[#111] hover:bg-[#f0f0f0] transition-colors"
+            >
+                Login
+            </Link>
           </button>
           <button
             onClick={() => setIsSignUp(true)}

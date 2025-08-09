@@ -8,6 +8,8 @@ import ExploreTutors from './pages/ExploreTutors'; // <-- new page
 import StudentLogin from './pages/StudentLogin'; // <-- new page
 import MentorLogin from './pages/MentorLogin'; // <-- new page
 import './App.css';
+import StudentDashboard from './pages/StudentDashboard';
+import TutorDashboard from './pages/TutorsDashboard';
 
 // Homepage layout
 function HomePage() {
@@ -34,6 +36,9 @@ function App(): JSX.Element {
           <Route path="/student-login" element={<Hero />} />
           <Route path="/mentor-login" element={<MentorLogin />} />
           <Route path="/mentor-login" element={<Navbar/>} />
+          <Route path="/student-dashboard" element={<StudentDashboard/>} />
+          <Route path="/mentor-login" element={<MentorLogin />} />
+        <Route path="/tutor-messages" element={<TutorDashboard />} />
         </Routes>
       </Router>
     </main>
